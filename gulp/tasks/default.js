@@ -3,7 +3,7 @@ var runSequence = require('run-sequence');
 
 gulp.task('default', function(callback) {
   runSequence(
-    'clean',
+    ['clean','bower'],
     ['assets', 'media', 'pages', 'blog'],
     callback
   )
