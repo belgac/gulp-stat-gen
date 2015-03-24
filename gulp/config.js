@@ -73,7 +73,7 @@ module.exports = {
     mediaSrc:[baseContent+mediaSrc+'/**/*'],
     pagesSrc:[baseTheme+siteConfig.theme+baseTemplates+'page.html',baseContent+'/pages/'+'*'+markDownExtension],
     blogSrc:[baseTheme+siteConfig.theme+baseTemplates+'index.html',baseTheme+siteConfig.theme+baseTemplates+'journal.html',baseTheme+siteConfig.theme+baseTemplates+'post.html',baseTheme+siteConfig.theme+baseTemplates+'tag.html',baseContent+'/posts/'+'*'+markDownExtension],
-    partialsSrc:[baseTheme+siteConfig.theme+baseTemplates+'/partials/*.html',baseTheme+siteConfig.theme+baseTemplates+'default.html']
+    globalTemplatesSrc:[baseTheme+siteConfig.theme+baseTemplates+'/partials/*.html',baseTheme+siteConfig.theme+baseTemplates+'default.html']
   },
   applyTemplate:{
     siteConfig:siteConfig,
