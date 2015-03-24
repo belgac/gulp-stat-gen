@@ -1,5 +1,4 @@
 var gulp = require('gulp');
-var http = require('http');
 
 var config = require('../config').watch;
 
