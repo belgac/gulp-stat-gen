@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include "./partials/head.html" %}
+  </head>
+  <body>
+    <header class="container-fluid">
+          {% include "./partials/header.html" %}
+    </header>
+    <main class="container">
+          {% block content %}{% endblock %}
+    </main>
+    <footer class="container-fluid text-center">
+          {% include "./partials/footer.html" %}
+    </footer>
+    {% include "./partials/scripts.html" ignore missing %}
+  </body>
+</html>

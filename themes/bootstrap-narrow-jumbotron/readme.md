@@ -1,0 +1,1 @@
+This is the bootstrap narrow jumbotron theme from http://getbootstrap.com/examples/jumbotron-narrow/ adapted to the site generator, use it as a base for your own site.

@@ -1,0 +1,1 @@
+This is the bootstrap starter theme from http://getbootstrap.com/examples/starter-template/ with a footer adapted to the site generator, use it as a base for your own site.
