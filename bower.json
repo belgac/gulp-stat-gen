@@ -1,0 +1,19 @@
+{
+  "name": "gulp-stat-gen",
+  "version": "0.0.1",
+  "homepage": "https://github.com/belgac/gulp-stat-gen",
+  "authors": [
+    "belgac <hans.scheuren@bizliner.com>"
+  ],
+  "description": "A gulp static site generator",
+  "main": "gulpfile.js",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
