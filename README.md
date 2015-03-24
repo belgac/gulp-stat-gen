@@ -1,11 +1,8 @@
 
-Rioki's Corner
-==============
+Gulp Static Site Generator
+===========================
 
-This is the source of [Rioki's Personal website][1].
+This is the source of the gulp static file generator. It is a fork of [Rioki's generator][1], that include many more functionalities.
 
-You are free to look at how I solved some twists with [jekyll]. The content 
-and design is mine and may only be reproduced with permission.
+[1]: http://github.com/rioki/www.rioki.org
 
-[1]: http://www.rioki.org
-[jekyll]: https://github.com/mojombo/jekyll
