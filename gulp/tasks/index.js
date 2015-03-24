@@ -4,7 +4,7 @@ var applyTemplate = require ('../utils/apply-template');
 
 var config = require('../config').index;
 
-gulp.task('index', ['posts'], function () {
+gulp.task('index', function () {
     return dummy(config.dummy)
         .pipe(applyTemplate(config.defaultTemplate))
         .pipe(gulp.dest(config.dest));
