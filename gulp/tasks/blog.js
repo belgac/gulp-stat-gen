@@ -1,0 +1,10 @@
+var gulp = require('gulp');
+var runSequence = require('run-sequence');
+
+gulp.task('blog', function(callback) {
+  runSequence(
+    'posts',
+    ['index', 'archive', 'tags', 'rss'],
+    callback
+  )
+});
