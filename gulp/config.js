@@ -59,12 +59,21 @@ module.exports = {
     src:baseBuildDest+'/',
     read: {read: false}
   },
+  browserSync: {
+    server: {
+      baseDir:baseBuildDest
+    },
+    port: 3000,
+    files: [
+      baseBuildDest+'/*'
+    ]
+  },
   watch:{
     assetsSrc:[baseTheme+siteConfig.theme+'/'+assetsSrc+'/**/*'],
     mediaSrc:[baseContent+mediaSrc+'/**/*'],
     pagesSrc:[baseTheme+siteConfig.theme+baseTemplates+'page.html',baseContent+'/pages/'+'*'+markDownExtension],
-    blogSrc:[baseTheme+siteConfig.theme+baseTemplates+'post.html', baseTheme+siteConfig.theme+baseTemplates+'index.html',baseTheme+siteConfig.theme+baseTemplates+'journal.html',baseContent+'/posts/'+'*'+markDownExtension],
-    partialsSrc:[baseTheme+siteConfig.theme+baseTemplates+'/partials/*.html']
+    blogSrc:[baseTheme+siteConfig.theme+baseTemplates+'index.html',baseTheme+siteConfig.theme+baseTemplates+'journal.html',baseTheme+siteConfig.theme+baseTemplates+'post.html',baseTheme+siteConfig.theme+baseTemplates+'tag.html',baseContent+'/posts/'+'*'+markDownExtension],
+    partialsSrc:[baseTheme+siteConfig.theme+baseTemplates+'/partials/*.html',baseTheme+siteConfig.theme+baseTemplates+'default.html']
   },
   applyTemplate:{
     siteConfig:siteConfig,
