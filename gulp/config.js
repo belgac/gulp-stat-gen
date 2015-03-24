@@ -9,8 +9,12 @@ var htmlRenameExt = '.html';
 var mediaSrc = '/media';
 var rePostName   = /(\d{4})-(\d{1,2})-(\d{1,2})-(.*)/;
 var siteConfig = require('../site.json');
+var bowerDir = "bower_components"
 
 module.exports = {
+  bower:{
+    bowerDir: bowerDir
+  },
   assets:{
     src:baseTheme+'/'+siteConfig.theme+'/'+assetsSrc+'/**/*',
     dest:baseBuildDest+'/'
