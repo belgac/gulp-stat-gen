@@ -6,6 +6,7 @@ gulp.task('watch', ['default','browsersync'], function () {
   gulp.watch(config.assetsSrc, ['assets']);
   gulp.watch(config.mediaSrc, ['media']);
   gulp.watch(config.pagesSrc, ['pages']);
+  gulp.watch(config.rssSrc, ['rss']);
   gulp.watch(config.blogSrc, ['posts', 'index', 'archive', 'tags', 'rss']);
   gulp.watch(config.globalTemplatesSrc, ['pages','posts', 'index', 'archive', 'tags', 'rss']);
 });

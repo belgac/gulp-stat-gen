@@ -71,6 +71,7 @@ module.exports = {
   watch:{
     assetsSrc:[baseTheme+siteConfig.theme+'/'+assetsSrc+'/**/*'],
     mediaSrc:[baseContent+mediaSrc+'/**/*'],
+    rssSrc:[baseTheme+siteConfig.theme+baseTemplates+'atom.xml'],
     pagesSrc:[baseTheme+siteConfig.theme+baseTemplates+'page.html',baseContent+'/pages/'+'*'+markDownExtension],
     blogSrc:[baseTheme+siteConfig.theme+baseTemplates+'index.html',baseTheme+siteConfig.theme+baseTemplates+'journal.html',baseTheme+siteConfig.theme+baseTemplates+'post.html',baseTheme+siteConfig.theme+baseTemplates+'tag.html',baseContent+'/posts/'+'*'+markDownExtension],
     globalTemplatesSrc:[baseTheme+siteConfig.theme+baseTemplates+'/partials/*.html',baseTheme+siteConfig.theme+baseTemplates+'default.html']
