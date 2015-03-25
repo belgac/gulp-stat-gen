@@ -1,6 +1,7 @@
-var baseTheme = 'themes/';
-var assetsSrc ='assets';
 var baseBuildDest = 'build';
+var bowerDir = "bower_components"
+var baseTheme = 'theme';
+var assetsSrc ='assets';
 var baseContent = 'content';
 var markDownExtension = '.md';
 var baseFrontMatterConfig = {property: 'page', remove: true};
@@ -9,20 +10,27 @@ var htmlRenameExt = '.html';
 var mediaSrc = '/media';
 var rePostName   = /(\d{4})-(\d{1,2})-(\d{1,2})-(.*)/;
 var siteConfig = require('../site.json');
-var bowerDir = "bower_components"
 
 module.exports = {
+  clean:{
+    src:baseBuildDest+'/',
+    read: {read: false}
+  },
+  prepareTemplate:{
+    src:bowerDir+"/"+siteConfig.theme+"/**/*",
+    dest:baseTheme+"/"
+  },
   bower:{
     bowerDir: bowerDir
   },
   assets:{
-    src:baseTheme+'/'+siteConfig.theme+'/'+assetsSrc+'/**/*',
+    src:baseTheme+'/'+assetsSrc+'/**/*',
     dest:baseBuildDest+'/'
   },
   pages:{
     src: baseContent+'/pages/'+'*'+markDownExtension,
     frontMatterConfig:baseFrontMatterConfig,
-    defaultTemplate:'../../'+baseTheme+siteConfig.theme+baseTemplates+'page.html',
+    defaultTemplate:'../../'+baseTheme+"/"+baseTemplates+'page.html',
     renameExt: htmlRenameExt,
     dest:baseBuildDest
   },
@@ -35,33 +43,29 @@ module.exports = {
     src: baseContent+'/posts/'+'*'+markDownExtension,
     frontMatterConfig:baseFrontMatterConfig,
     summarizeSign:'<!--more-->',
-    defaultTemplate:'../../'+baseTheme+siteConfig.theme+baseTemplates+'post.html',
+    defaultTemplate:'../../'+baseTheme+"/"+baseTemplates+'post.html',
     renameExt: htmlRenameExt,
     dest: baseBuildDest
   },
   index:{
     dummy:'index.html',
-    defaultTemplate:'../../'+baseTheme+siteConfig.theme+baseTemplates+'index.html',
+    defaultTemplate:'../../'+baseTheme+"/"+baseTemplates+'index.html',
     dest: baseBuildDest+'/'
   },
   archive:{
     baseName:'journal',
     count:10,
-    defaultTemplate:'../../'+baseTheme+siteConfig.theme+baseTemplates+'journal.html',
+    defaultTemplate:'../../'+baseTheme+"/"+baseTemplates+'journal.html',
     dest: baseBuildDest+'/'
   },
   tags:{
-    defaultTemplate:'../../'+baseTheme+siteConfig.theme+baseTemplates+'tag.html',
+    defaultTemplate:'../../'+baseTheme+"/"+baseTemplates+'tag.html',
     dest: baseBuildDest+'/tag'
   },
   rss:{
     dummy:'atom.xml',
-    defaultTemplate:'../../'+baseTheme+siteConfig.theme+baseTemplates+'atom.xml',
+    defaultTemplate:'../../'+baseTheme+"/"+baseTemplates+'atom.xml',
     dest: baseBuildDest+'/'
-  },
-  clean:{
-    src:baseBuildDest+'/',
-    read: {read: false}
   },
   browserSync: {
     server: {
@@ -73,16 +77,16 @@ module.exports = {
     ]
   },
   watch:{
-    assetsSrc:[baseTheme+siteConfig.theme+'/'+assetsSrc+'/**/*'],
+    assetsSrc:[baseTheme+"/"+assetsSrc+'/**/*'],
     mediaSrc:[baseContent+mediaSrc+'/**/*'],
-    rssSrc:[baseTheme+siteConfig.theme+baseTemplates+'atom.xml'],
-    pagesSrc:[baseTheme+siteConfig.theme+baseTemplates+'page.html',baseContent+'/pages/'+'*'+markDownExtension],
-    blogSrc:[baseTheme+siteConfig.theme+baseTemplates+'index.html',baseTheme+siteConfig.theme+baseTemplates+'journal.html',baseTheme+siteConfig.theme+baseTemplates+'post.html',baseTheme+siteConfig.theme+baseTemplates+'tag.html',baseContent+'/posts/'+'*'+markDownExtension],
-    globalTemplatesSrc:[baseTheme+siteConfig.theme+baseTemplates+'/partials/*.html',baseTheme+siteConfig.theme+baseTemplates+'default.html']
+    rssSrc:[baseTheme+"/"+baseTemplates+'atom.xml'],
+    pagesSrc:[baseTheme+"/"+baseTemplates+'page.html',baseContent+'/pages/'+'*'+markDownExtension],
+    blogSrc:[baseTheme+"/"+baseTemplates+'index.html',baseTheme+"/"+baseTemplates+'journal.html',baseTheme+"/"+baseTemplates+'post.html',baseTheme+"/"+baseTemplates+'tag.html',baseContent+'/posts/'+'*'+markDownExtension],
+    globalTemplatesSrc:[baseTheme+"/"+baseTemplates+'/partials/*.html',baseTheme+"/"+baseTemplates+'default.html']
   },
   applyTemplate:{
     siteConfig:siteConfig,
-    templateSrc:"./"+baseTheme+siteConfig.theme+baseTemplates
+    templateSrc:"./"+baseTheme+"/"+baseTemplates
   },
   collectPosts:{
     siteConfig:siteConfig
