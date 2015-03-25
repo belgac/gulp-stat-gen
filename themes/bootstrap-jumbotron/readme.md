@@ -1,1 +1,0 @@
-This is the bootstrap jumbotron theme from http://getbootstrap.com/examples/jumbotron/ adapted to the site generator, use it as a base for your own site.

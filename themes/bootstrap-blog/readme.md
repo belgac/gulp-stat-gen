@@ -1,1 +1,0 @@
-This is the bootstrap blog theme from http://getbootstrap.com/examples/blog/ adapted to the site generator, use it as a base for your own site.
