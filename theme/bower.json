@@ -17,6 +17,6 @@
     "tests"
   ],
   "dependencies": {
-    "gsg-theme-default": "~1.1"
+    "gsg-theme-bootstrap-blog": "~1.1"
   }
 }
