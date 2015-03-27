@@ -25,6 +25,7 @@
     "require-dir": "^0.2.0",
     "run-sequence": "^1.0.1",
     "browser-sync": "^1.5.2",
-    "gulp-bower": "0.0.10"
+    "gulp-bower": "0.0.10",
+    "main-bower-files": "^2.6.2"
   }
 }

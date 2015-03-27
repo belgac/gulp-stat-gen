@@ -1,0 +1,23 @@
+{% set page.title = "Home page" %}
+{% set page.nav = "home" %}
+{% extends 'default.html' %}
+{% block content %}
+
+  <section id="intro" class="text-center">
+    <h1>{{ page.title }}</h1>
+    <p class="lead">Welcome to this blog</p>
+  </section>
+<div class="row">
+  <section id="articles" class="col-md-9">
+{% for post in site.posts %}
+  {% if loop.index < 4 %}
+    {% include "./partials/post-summary.html" %}
+  {% endif %}  
+{% endfor %}
+  </section>
+  <section id="right-col" class="col-md-3">
+    {% include "./partials/about-side.html" %}
+    {% include "./partials/tag-list.html" %}
+  </section>
+</div>
+{% endblock %}

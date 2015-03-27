@@ -1,0 +1,10 @@
+{
+  "page":"page.html",
+  "post":"post.html",
+  "index":"index.html",
+  "archive":"journal.html",
+  "tag":"tag.html",
+  "rss":"atom.xml",
+  "partials":"/partials/*.html",
+  "default":"default.html"
+}

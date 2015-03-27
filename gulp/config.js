@@ -18,6 +18,7 @@ module.exports = {
   },
   prepareTemplate:{
     src:bowerDir+"/"+siteConfig.theme+"/**/*",
+    bowerDir: bowerDir,
     dest:baseTheme+"/"
   },
   bower:{
