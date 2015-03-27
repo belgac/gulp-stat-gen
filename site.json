@@ -1,7 +1,8 @@
 {
-    "title": "Demo title",
-    "url": "http://www.demourl.org",
-    "author": "Hans Scheuren",
-    "email": "hans.scheuren@bizliner.com",
-    "theme":"gsg-theme-bootstrap-blog"
+  "title": "Demo title",
+  "url": "http://www.demourl.org",
+  "author": "Hans Scheuren",
+  "email": "hans.scheuren@bizliner.com",
+  "startYear":"2015",
+  "theme":{"gsg-theme-bootstrap-blog": "master"}
 }

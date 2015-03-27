@@ -1,6 +1,7 @@
 var baseBuildDest = 'build';
 var bowerDir = "bower_components"
-var baseTheme = 'theme/actualtheme';
+var baseTheme = "theme"
+var actualThemeDest = baseTheme+'/actualTheme';
 var assetsSrc ='assets';
 var baseContent = 'content';
 var markDownExtension = '.md';
@@ -13,25 +14,30 @@ var siteConfig = require('../site.json');
 
 module.exports = {
   clean:{
-    src:[baseBuildDest+'/',baseTheme+"/"],
+    src:[baseBuildDest+'/',actualThemeDest+"/"],
     read: {read: false}
   },
-  prepareTemplate:{
-    src:bowerDir+"/"+siteConfig.theme+"/**/*",
-    bowerDir: "theme/"+bowerDir,
-    dest:baseTheme+"/"
+  themeBowerJson:{
+    baseBowerJson: baseTheme+"/basefile/bower.json",
+    actualTheme:siteConfig.theme,
+    bowerThemeDest:baseTheme
   },
   bower:{
     bowerDir: bowerDir
   },
+  mergeTheme:{
+    src:bowerDir+"/"+siteConfig.theme+"/**/*",
+    bowerDir: "theme/"+bowerDir,
+    dest:actualThemeDest+"/"
+  },
   assets:{
-    src:baseTheme+'/'+assetsSrc+'/**/*',
+    src:actualThemeDest+'/'+assetsSrc+'/**/*',
     dest:baseBuildDest+'/'
   },
   pages:{
     src: baseContent+'/pages/'+'*'+markDownExtension,
     frontMatterConfig:baseFrontMatterConfig,
-    defaultTemplate:'../../'+baseTheme+"/"+baseTemplates+'page.html',
+    defaultTemplate:'../../'+actualThemeDest+"/"+baseTemplates+'page.html',
     renameExt: htmlRenameExt,
     dest:baseBuildDest
   },
@@ -44,28 +50,28 @@ module.exports = {
     src: baseContent+'/posts/'+'*'+markDownExtension,
     frontMatterConfig:baseFrontMatterConfig,
     summarizeSign:'<!--more-->',
-    defaultTemplate:'../../'+baseTheme+"/"+baseTemplates+'post.html',
+    defaultTemplate:'../../'+actualThemeDest+"/"+baseTemplates+'post.html',
     renameExt: htmlRenameExt,
     dest: baseBuildDest
   },
   index:{
     dummy:'index.html',
-    defaultTemplate:'../../'+baseTheme+"/"+baseTemplates+'index.html',
+    defaultTemplate:'../../'+actualThemeDest+"/"+baseTemplates+'index.html',
     dest: baseBuildDest+'/'
   },
   archive:{
     baseName:'journal',
     count:10,
-    defaultTemplate:'../../'+baseTheme+"/"+baseTemplates+'journal.html',
+    defaultTemplate:'../../'+actualThemeDest+"/"+baseTemplates+'journal.html',
     dest: baseBuildDest+'/'
   },
   tags:{
-    defaultTemplate:'../../'+baseTheme+"/"+baseTemplates+'tag.html',
+    defaultTemplate:'../../'+actualThemeDest+"/"+baseTemplates+'tag.html',
     dest: baseBuildDest+'/tag'
   },
   rss:{
     dummy:'atom.xml',
-    defaultTemplate:'../../'+baseTheme+"/"+baseTemplates+'atom.xml',
+    defaultTemplate:'../../'+actualThemeDest+"/"+baseTemplates+'atom.xml',
     dest: baseBuildDest+'/'
   },
   browserSync: {
@@ -78,16 +84,16 @@ module.exports = {
     ]
   },
   watch:{
-    assetsSrc:[baseTheme+"/"+assetsSrc+'/**/*'],
+    assetsSrc:[actualThemeDest+"/"+assetsSrc+'/**/*'],
     mediaSrc:[baseContent+mediaSrc+'/**/*'],
-    rssSrc:[baseTheme+"/"+baseTemplates+'atom.xml'],
-    pagesSrc:[baseTheme+"/"+baseTemplates+'page.html',baseContent+'/pages/'+'*'+markDownExtension],
-    blogSrc:[baseTheme+"/"+baseTemplates+'index.html',baseTheme+"/"+baseTemplates+'journal.html',baseTheme+"/"+baseTemplates+'post.html',baseTheme+"/"+baseTemplates+'tag.html',baseContent+'/posts/'+'*'+markDownExtension],
-    globalTemplatesSrc:[baseTheme+"/"+baseTemplates+'/partials/*.html',baseTheme+"/"+baseTemplates+'default.html']
+    rssSrc:[actualThemeDest+"/"+baseTemplates+'atom.xml'],
+    pagesSrc:[actualThemeDest+"/"+baseTemplates+'page.html',baseContent+'/pages/'+'*'+markDownExtension],
+    blogSrc:[actualThemeDest+"/"+baseTemplates+'index.html',actualThemeDest+"/"+baseTemplates+'journal.html',actualThemeDest+"/"+baseTemplates+'post.html',actualThemeDest+"/"+baseTemplates+'tag.html',baseContent+'/posts/'+'*'+markDownExtension],
+    globalTemplatesSrc:[actualThemeDest+"/"+baseTemplates+'/partials/*.html',actualThemeDest+"/"+baseTemplates+'default.html']
   },
   applyTemplate:{
     siteConfig:siteConfig,
-    templateSrc:"./"+baseTheme+"/"+baseTemplates
+    templateSrc:"./"+actualThemeDest+"/"+baseTemplates
   },
   collectPosts:{
     siteConfig:siteConfig
