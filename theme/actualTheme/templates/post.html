@@ -1,0 +1,17 @@
+{% extends 'default.html' %}
+{% block content %}
+<article>
+  <header>
+    <h1>{{ page.title }}</h1>
+    <span class="post-date">{{ page.date|date('Y-m-d') }}</span>
+    <span class="tags">  
+  {% for tag in page.tags %}
+      <a href="/tag/{{tag}}.html">{{tag}}</a>
+  {% endfor %}
+    </span>
+  </header>
+  <section class="post-content">
+    {{ content|safe }}
+  </section>
+</article>
+{% endblock %}
