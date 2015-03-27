@@ -1,11 +1,11 @@
 {
-  "name": "gulp-stat-gen",
+  "name": "gsg-plugin-theme",
   "version": "0.0.1",
   "homepage": "https://github.com/belgac/gulp-stat-gen",
   "authors": [
     "belgac <hans.scheuren@bizliner.com>"
   ],
-  "description": "A gulp static site generator",
+  "description": "the themes of gulp-stat-gen",
   "main": "gulpfile.js",
   "license": "MIT",
   "private": true,
