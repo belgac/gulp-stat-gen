@@ -1,6 +1,6 @@
 var baseBuildDest = 'build';
 var bowerDir = "bower_components"
-var baseTheme = 'theme';
+var baseTheme = 'theme/actualtheme';
 var assetsSrc ='assets';
 var baseContent = 'content';
 var markDownExtension = '.md';
@@ -13,12 +13,12 @@ var siteConfig = require('../site.json');
 
 module.exports = {
   clean:{
-    src:baseBuildDest+'/',
+    src:[baseBuildDest+'/',baseTheme+"/"],
     read: {read: false}
   },
   prepareTemplate:{
     src:bowerDir+"/"+siteConfig.theme+"/**/*",
-    bowerDir: bowerDir,
+    bowerDir: "theme/"+bowerDir,
     dest:baseTheme+"/"
   },
   bower:{

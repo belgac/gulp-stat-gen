@@ -4,6 +4,5 @@ var bower = require('gulp-bower');
 var config = require('../config').bower;
 
 gulp.task('bower', function() {
-    return bower({ cwd: 'theme' })
-      .pipe(gulp.dest(config.bowerDir))
+    return bower({ cwd: 'theme' })     
 });
